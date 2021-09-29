@@ -22,12 +22,6 @@ function guardar() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-$("main").prepend('<h1 style="display: none" >Desafío: Integrando JQuery a Nuestro Proyecto</h1>');
-
-$('main').append("<h2>¿Deseas conocer nuestras ofertas?</h2>");
-
-$("h1").fadeIn("slow");
-
 let acumulador = ``;
 baseDeDatos.forEach((producto) => {
     acumulador += `<div class="col mb-5" id="${producto.title}">
@@ -46,7 +40,6 @@ baseDeDatos.forEach((producto) => {
         <!-- Product actions-->
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
             <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="agregar(${producto.id})">Comprar</a></div>
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="borrarDelCarrito('${producto.id}')">Borrar Producto</a></div>
         </div>
     </div>
     </div>`
@@ -54,14 +47,6 @@ baseDeDatos.forEach((producto) => {
 
 
     document.getElementById("productos").innerHTML = acumulador;
-
-function borrarDelCarrito(title){
-    const productoEncontrado = baseDeDatos.find(producto => producto.title === title);
-
-    const card = document.getElementById(title);
-
-    card.parentNode.removeChild(card);
-}
 
 
 function displayResults(){
@@ -84,7 +69,7 @@ function displayResults(){
         </div>
         <!-- Product actions-->
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="borrarDelCarrito('${producto.id}')">Borrar Producto</a></div>
+           <h4>¡Excelente compra!</h5>
         </div>
     </div>
     </div>`
@@ -124,4 +109,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
 

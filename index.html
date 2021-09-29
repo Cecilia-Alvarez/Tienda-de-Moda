@@ -31,10 +31,6 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="btn btn-outline-dark mt-auto" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="btn btn-outline-dark mt-auto" href="#!">Dresses</a></li>
-                                <li><a class="btn btn-outline-dark mt-auto" href="#!">Tops</a></li>
-                                <li><a class="btn btn-outline-dark mt-auto" href="#!">Pants</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -47,12 +43,12 @@
                         <button onclick="displayResults()" id="myBtn">Ver Carrito
                         </button>
                         <div id="myModal" class="modal">
-                            <div class="container px-4 px-lg-5 mt-5">
-                                <h4>Haz elegido comprar:</h4>
-                                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="resultados">
+                            <span class="close">&times;</span>
+                            <h4>Haz elegido comprar:</h4>
+                            <div class="container px-4 px-lg-5 mt-5">                            
+                                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="resultados">
                                 </div>
                             </div>
-                            <span class="close">&times;</span>
                         </div>
                     </form>
                 </div>
@@ -67,18 +63,10 @@
                 </div>
             </div>
         </header>
-        <!-- Section-->
-        <section class="py-5">
-            <!-- <button class="btn btn-outline-dark mt-auto" onclick="displayProducts('Tops')">Ver Tops</button>
-            <button class="btn btn-outline-dark mt-auto" onclick="displayProducts('Vestidos')">Ver Vestidos</button>
-            <button class="btn btn-outline-dark mt-auto" onclick="displayProducts('Pantalones')">Ver Pantalones</button>
-            <button class="btn btn-outline-dark mt-auto" onclick="displayProducts('default')">Ver Todo</button>    -->
             <div class="container px-4 px-lg-5 mt-5" id="presentacion">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="productos">
                 </div>
             </div>
-        </section>
-        <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
         </footer>
