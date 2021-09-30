@@ -18,6 +18,8 @@ const producto_cinco = new Producto(5, "Vestido Sabrina", 4500, "Vestidos", 'htt
 const baseDeDatos = [producto_uno, producto_dos, producto_tres, producto_cuatro, producto_cinco];
 const carrito = [];
 
+displayProducts('default');
+
 function guardar() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
@@ -87,6 +89,37 @@ function agregar(id){
         displayResults()
         document.getElementById("contadorCarrito").innerHTML = carrito.length;
     }
+};
+
+function displayProducts(filtro){
+
+    let productosFiltrados = (filtro !== "default") ? 
+    baseDeDatos.filter(producto => producto.category == filtro) : 
+    baseDeDatos;
+
+    let acumulador = ``;
+    productosFiltrados.forEach((producto) =>{
+    acumulador += `<div class="col mb-5" id="${producto.title}">
+    <div class="card h-100">
+        <!-- Product image-->
+        <img class="card-img-top" src="${producto.img}"..." />
+        <!-- Product details-->
+        <div class="card-body p-4">
+            <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder">${producto.title}</h5>
+                <!-- Product price-->
+                $${producto.price}
+            </div>
+        </div>
+        <!-- Product actions-->
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#" onclick="agregar(${producto.id})">Comprar</a></div>
+        </div>
+    </div>
+    </div>`
+})
+    document.getElementById("productos").innerHTML = acumulador;
 };
 
 // Ventana Carrito
