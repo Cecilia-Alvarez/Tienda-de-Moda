@@ -13,7 +13,7 @@ const producto_uno = new Producto(1, "Pantalón Daniela", 2500, "Pantalones", 'h
 const producto_dos = new Producto(2, "Vestido Florencia", 4000, "Vestidos", 'https://http2.mlstatic.com/D_NQ_NP_822811-MLA31095910641_062019-W.jpg');
 const producto_tres = new Producto(3, "Top Mariela", 2000, "Tops", 'https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/productimage/2020/9/22/7e999732-a4ad-4464-9d57-5e0bd60a270c1600728478352-1.jpg');
 const producto_cuatro = new Producto(4, "Top Malena", 2500, "Tops", 'https://m.media-amazon.com/images/I/61q4GZdyofL._AC_UL320_.jpg');
-const producto_cinco = new Producto(5, "Vestido Sabrina", 4500, "Vestidos", 'https://www.laprensa.hn/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=Iaek9OOWHkF4qu$eHQf5as$daE2N3K4ZzOUsqbU5sYvGJonhL_UnsX3udqWupQY16FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&CONTENTTYPE=image/jpeg');
+const producto_cinco = new Producto(5, "Vestido Sabrina", 4500, "Vestidos", 'https://e00-telva.uecdn.es/assets/multimedia/imagenes/2021/05/14/16209782579694.jpg');
 
 const baseDeDatos = [producto_uno, producto_dos, producto_tres, producto_cuatro, producto_cinco];
 const carrito = [];
@@ -47,8 +47,7 @@ baseDeDatos.forEach((producto) => {
     </div>`
 });
 
-
-    document.getElementById("productos").innerHTML = acumulador;
+document.querySelector("#productos").innerHTML = acumulador;
 
 
 function displayResults(){
