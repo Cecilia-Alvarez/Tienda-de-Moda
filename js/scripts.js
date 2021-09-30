@@ -9,11 +9,11 @@ class Producto {
     }
 }
 
-const producto_uno = new Producto(1, "Pantalón Daniela", 2500, "Pantalones", 'https://datalatienda.com/8398-thickbox_default/pantalon-cargo-con-puno-dama-embrujo-5224.jpg');
-const producto_dos = new Producto(2, "Vestido Florencia", 4000, "Vestidos", 'https://http2.mlstatic.com/D_NQ_NP_822811-MLA31095910641_062019-W.jpg');
-const producto_tres = new Producto(3, "Top Mariela", 2000, "Tops", 'https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/productimage/2020/9/22/7e999732-a4ad-4464-9d57-5e0bd60a270c1600728478352-1.jpg');
-const producto_cuatro = new Producto(4, "Top Malena", 2500, "Tops", 'https://m.media-amazon.com/images/I/61q4GZdyofL._AC_UL320_.jpg');
-const producto_cinco = new Producto(5, "Vestido Sabrina", 4500, "Vestidos", 'https://e00-telva.uecdn.es/assets/multimedia/imagenes/2021/05/14/16209782579694.jpg');
+const producto_uno = new Producto(1, "Pantalón Daniela", 2500, "Pantalones", 'img/pantalon.jpg');
+const producto_dos = new Producto(2, "Vestido Florencia", 4000, "Vestidos", 'img/vestido-florencia.jpg');
+const producto_tres = new Producto(3, "Top Mariela", 2000, "Tops", 'img/top-mariela.webp');
+const producto_cuatro = new Producto(4, "Top Malena", 2500, "Tops", 'img/top-malena.jpg');
+const producto_cinco = new Producto(5, "Vestido Sabrina", 4500, "Vestidos", 'img/vestido-sabrina.jpg');
 
 const baseDeDatos = [producto_uno, producto_dos, producto_tres, producto_cuatro, producto_cinco];
 const carrito = [];
@@ -140,7 +140,20 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
+
+let mostrar=``;
+
+fetch("banner.json")
+.then(response=>response.json())
+.then(data=>{
+    data.forEach(element =>{
+        mostrar += `<img src="${element.img}" class="img-fluid" alt="Responsive image">`
+    });
+document.getElementById("banner").innerHTML = mostrar;
+})
+
+
 
 
 
