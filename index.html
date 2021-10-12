@@ -26,9 +26,9 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a> -->
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="btn btn-outline-dark mt-auto" href="#!">All Products</a></li>
                             </ul>
@@ -36,19 +36,36 @@
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
+                            <div>
                             <i class="bi-cart-fill me-1"></i>
                             Cart
                             <span id="contadorCarrito" class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </div>
                         </button>
                         <button onclick="displayResults()" id="myBtn">Ver Carrito
                         </button>
                         <div id="myModal" class="modal">
                             <span class="close">&times;</span>
-                            <h4>Haz elegido comprar:</h4>
-                            <div class="container px-4 px-lg-5 mt-5">                            
-                                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="resultados">
-                                </div>
-                            </div>
+                            <div class="container">
+                                <h4>Carrito de compras</h4>
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Item</th>
+                                      <th scope="col">Cantidad</th>
+                                      <th scope="col">Total</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="items"></tbody>
+                                  <tfoot>
+                                    <tr id="footer">
+                                    </tr>
+                                  </tfoot>
+                                </table>
+                                                                    <div class="text-center">
+                                        <a class="btn btn-outline-dark mt-auto" href="#">Vaciar Carrito</a>
+                                    </div>
+                              </div>
                         </div>
                     </form>
                 </div>
@@ -64,8 +81,7 @@
             </div>
         </header>
             <!-- Banner -->
-            <div id="banner">
-                <!-- <img src="img/banner.jpg" class="img-fluid" alt="Responsive image"> -->
+            <div id="banner"> 
             </div>
             <div class="container px-4 px-lg-5 mt-5">
                 <br>
@@ -89,3 +105,4 @@
         <script src="js/jquery-3.6.0.min.js"></script>
     </body>
 </html>
+
